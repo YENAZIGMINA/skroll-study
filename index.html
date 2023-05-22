@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤러 과제</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="text"></div>
+    <div class="fixed-bg" data-500="background-color:#215338" 
+    data-1000="background-color:#215338" 
+    data-2000="background-color:#2153387"
+    ></div>
+
+
+    <section id="slide01" class="slide" 
+    data-0="opacity:0; transform:translateX(-100%)" 
+    data-500="opacity:1; transform:translateX(0%)" 
+    data-2000="opacity:0; "  
+    >
+        <img src="img/princess1.jpg" class="img" alt="공주">
+        <div class="slide-content">
+            <h2>제목입니다</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam fuga adipisci ab facere repellat nam
+                laboriosam minus ullam deleniti! Nemo, aperiam provident. Aliquid, odio repellat hic non ipsam beatae
+                distinctio.</p>
+        </div>
+    </section>
+
+    <section id="slide02" class="slide"
+    data-1000="opacity:0; transform:translateX(-100%)"
+    data-2000="opacity:1; transform:translateX(0%)"
+    data-2500="opacity:1 "
+    data-3000="opacity:0 "
+    >
+        <img src="img/princess2.jpg" class="img" alt="공주">
+        <div class="slide-content">
+            <!-- <h2>제목입니다2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam fuga adipisci ab facere repellat nam
+                laboriosam minus ullam deleniti! Nemo, aperiam provident. Aliquid, odio repellat hic non ipsam beatae
+                distinctio.</p> -->
+        </div>
+    </section>
+
+    <section id="slide03" class="slide"
+    data-2000="opacity:0; transform:scale(0.2)"
+    data-2500="opacity:1; transform:scale(1.2) "
+    data-3000="opacity:0 "
+    >
+        <img src="img/flower.png" class="img" alt="꽃">
+        <div class="slide-content">
+            <!-- <h2>제목입니다2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam fuga adipisci ab facere repellat nam
+                laboriosam minus ullam deleniti! Nemo, aperiam provident. Aliquid, odio repellat hic non ipsam beatae
+                distinctio.</p> -->
+        </div>
+    </section>
+
+
+    <script src="js/skrollr.min.js "></script>
+    <script>
+        var s = skrollr.init();
+
+        let text = document.querySelector('.text');
+        window.addEventListener('scroll', function () {
+            let wScroll = window.pageYOffset;
+            console.log(parseInt(wScroll))
+            text.innerHTML = parseInt(wScroll)
+        })
+    </script>
+</body>
+
+</html>
